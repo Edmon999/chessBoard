@@ -1,0 +1,19 @@
+.boardStyle{
+    background-color: rgb(255, 255, 255);
+    margin: auto ;
+    display: flex;
+    flex-wrap: wrap;
+}
+.boardItemStyle{
+    background-color: rgb(255, 253, 253);
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.boardItemDiffColor{
+    background-color: rgb(1, 59, 248);
+}
+body{
+   background-color: black; 
+}
