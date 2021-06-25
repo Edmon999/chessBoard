@@ -3,14 +3,14 @@ let image = new Image();
 image.width = 30;
 image.height = 30;
 image.src = './assets/rook.svg';
+
+let size = +prompt("board size ?")
+let possibleMovesArr = []
+
 let board = document.createElement("div")
 board.classList.add("boardStyle")
 let body = document.body;
 body.appendChild(board)
-let size = +prompt("board size ?")
-let possibleMovesArr = []
-
-
 
 board.style.width = `${size * 50}px`
 board.style.height = `${size * 50}px`
@@ -44,6 +44,7 @@ for(let i = 0 ; i < size; i++){
                         for(let i = 0; i < boardLength; i++){
                             if(boardArr[i].style.backgroundColor === "brown"){
                                 boardArr[i].style.backgroundColor = ""
+                                possibleMovesArr = []
                             }
                         }
                     }
@@ -65,19 +66,6 @@ const showMove = (id) => {
   return possibleMovesArr;
 }
 
-const moveRook = (arr) => {
-    const boardLength = board.children.length;
-    const boardArr = Array.from(board.childNodes)
-    console.log(id)
-    let newPossibleRookPosition = document.getElementById(id)
-    console.log(newPossibleRookPosition)
-    newPossibleRookPosition.appendChild(image)
-    for(let i = 0; i < boardLength; i++){
-        if(boardArr[i].style.backgroundColor === "brown"){
-            boardArr[i].style.backgroundColor = ""
-        }
-    }
-}
 
 let rookStartPosition = document.getElementById("0")
 rookStartPosition.appendChild(image)
